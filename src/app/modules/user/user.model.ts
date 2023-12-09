@@ -44,6 +44,7 @@ const userSchema = new mongoose.Schema<IUser, UserModel>(
 userSchema.methods.toJSON = function () {
   const userObject = this.toObject()
   delete userObject?.password
+  delete userObject?.__v
   return userObject
 }
 
